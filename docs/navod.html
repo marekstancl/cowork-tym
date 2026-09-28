@@ -1,0 +1,136 @@
+<!doctype html><html lang="cs"><head><meta charset="utf-8"><title>cowork-tym - návod</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:18mm 18mm 20mm}
+body{font:10.5pt/1.5 "Source Sans 3","DejaVu Sans",sans-serif;color:#1c2628}
+h1{font-size:26pt;margin:0 0 4pt;color:#1f6f78}h2{font-size:15pt;color:#1f6f78;margin:18pt 0 6pt;border-bottom:1px solid #d7dfe0;padding-bottom:3pt;page-break-after:avoid}h3{font-size:11.5pt;margin:12pt 0 4pt;page-break-after:avoid}
+.cover{height:240mm;display:flex;flex-direction:column;justify-content:center}
+.lead{font-size:13pt;color:#5b6b6e;max-width:140mm}
+.pb{page-break-before:always}
+.box{border:1px solid #d7dfe0;border-radius:6pt;padding:8pt 10pt;margin:8pt 0;page-break-inside:avoid}
+.say{background:#eef6f6;border-left:3pt solid #1f6f78;padding:6pt 10pt;margin:6pt 0;font-weight:600;page-break-inside:avoid}
+.warn{background:#fbf1d9;border-left:3pt solid #9a6a00;padding:6pt 10pt;margin:8pt 0;page-break-inside:avoid}
+table{border-collapse:collapse;width:100%;margin:6pt 0;page-break-inside:avoid}td,th{border-bottom:1px solid #d7dfe0;padding:4pt 6pt;text-align:left;vertical-align:top}th{font-size:8.5pt;text-transform:uppercase;letter-spacing:.04em;color:#5b6b6e}
+.who{display:inline-block;font-size:8.5pt;font-weight:700;padding:1pt 6pt;border-radius:8pt;margin-right:4pt}
+.ty{background:#fbe4e2;color:#9a2a22}.ag{background:#e3f2e8;color:#2e7d4f}
+ol,ul{margin:4pt 0;padding-left:16pt}li{margin:2pt 0}
+code{font-family:"DejaVu Sans Mono",monospace;font-size:9pt;background:#f1f4f4;padding:0 3pt}
+.small{font-size:9pt;color:#5b6b6e}
+</style></head><body>
+
+<div class="cover">
+<h1>cowork-tym</h1>
+<p class="lead">Návod pro uživatele. Jak si uspořádat Claude Cowork a jak přes něj řídit zaměstnance nebo externisty. Bez IT znalostí.</p>
+<p class="small" style="margin-top:30mm">Verze 0.2 · září 2026 · licence MIT</p>
+</div>
+
+<h2 class="pb">Co to je a pro koho</h2>
+<p><b>cowork-tym</b> je doplněk (plugin) do aplikace Claude, do režimu Cowork. Přidá tři průvodce. Každého spustíš jednou větou a on tě provede krok za krokem.</p>
+<table>
+<tr><th>Chci…</th><th>Napiš v Coworku</th><th>Kapitola</th></tr>
+<tr><td>si uspořádat svůj pracovní prostor</td><td>„Nastav mi Cowork“</td><td>A</td></tr>
+<tr><td>řídit zaměstnance nebo externisty</td><td>„Chci řídit externisty v Coworku“</td><td>B</td></tr>
+<tr><td>nastoupit do týmu, kam mě pozvali</td><td>„Jsem nový člen týmu, proveď mě nastavením“</td><td>C</td></tr>
+</table>
+<p>Průvodce vždy řekne, co uděláš <span class="who ty">TY</span> (klikání v aplikaci, na disku, účty) a co udělá <span class="who ag">AGENT</span> (soubory, texty, kontroly). Když něco na obrazovce nevidíš tak, jak ti popisuje, napiš mu, co vidíš. Poradí podle toho.</p>
+
+<h2>Instalace (jednou, 5 minut)</h2>
+<ol>
+<li>Měj aplikaci <b>Claude</b> pro Mac nebo Windows s placeným plánem (claude.ai/download).</li>
+<li>Stáhni soubor <code>cowork-tym.plugin</code> (od kolegy nebo z GitHubu, sekce Releases).</li>
+<li>Otevři ho dvojklikem, nebo ho v aplikaci nahraj v části pro pluginy. Potvrď instalaci.</li>
+<li><b>Aplikaci úplně ukonči a spusť znovu.</b> Mac: Cmd+Q. Windows: zavři okno a u hodin klikni pravým na ikonu Claude → Ukončit.</li>
+<li><b>Jen Windows a jen pro týmy (B, C):</b> nainstaluj <b>Git for Windows</b> z git-scm.com, všechno nech na výchozích volbách.</li>
+</ol>
+
+<h2 class="pb">A · Vlastní pracovní prostor</h2>
+<div class="say">Napiš: „Nastav mi Cowork“</div>
+<p>Zabere 30-45 minut. Výsledek: Claude ví, kdo jsi, píše tvým hlasem, ukládá věci na stálá místa a mezi okny si předává rozdělanou práci.</p>
+<h3>Co tě čeká</h3>
+<ol>
+<li><span class="who ty">TY</span> vytvoříš složku <code>CLAUDE COWORK</code> a připojíš ji v Coworku.
+ <br><span class="small">Mac: Finder → Cmd+Shift+H → Soubor → Nová složka. Windows: do adresního řádku Průzkumníku napiš <code>%USERPROFILE%</code>, pak pravé tlačítko → Nový → Složka. <b>Ne</b> do Dokumentů, na Plochu ani do OneDrive.</span></li>
+<li><span class="who ag">AGENT</span> do ní nakopíruje strukturu.</li>
+<li><span class="who ag">AGENT</span> ti položí pár otázek o tobě a tvé práci a sepíše profil. Požádá o 1-3 tvé texty, aby poznal tvůj styl.</li>
+<li><span class="who ty">TY</span> vložíš text, který ti ukáže, do nastavení aplikace (globální instrukce).</li>
+<li><span class="who ty">TY</span> založíš projekt „General“ a vložíš do něj instrukce.</li>
+<li>Ověření: v novém okně projektu napiš „Znáš pravidla a víš, jakému projektu patříš?“</li>
+</ol>
+<h3>Tři návyky, které se vyplatí</h3>
+<ul>
+<li>„<b>Ulož to jako šablonu</b>“, když se výsledek povede. Příště řekneš „Použij šablonu X“.</li>
+<li>„<b>Udělej předávku</b>“ před koncem delší práce. Další okno naváže.</li>
+<li>Jednou za čtvrtletí: „<b>Projdeme moje cíle</b>“.</li>
+</ul>
+
+<h2 class="pb">B · Řízení zaměstnanců a externistů</h2>
+<div class="say">Napiš: „Chci řídit externisty v Coworku“</div>
+<h3>Jak to funguje</h3>
+<div class="box">
+Máš <b>sdílenou složku</b> na cloudovém disku (Google Drive, OneDrive, Dropbox). V ní jsou:
+<ul>
+<li><code>PRAVIDLA.md</code>: pravidla práce, <b>jediné místo</b>, kde je měníš.</li>
+<li><code>PRAVIDLA-VERZE.txt</code>: číslo verze pravidel.</li>
+<li><code>clen-jmeno/</code>: celá práce každého člena. Když odejde, zůstane týmu.</li>
+<li>návody, šablony, znalostní báze, kontakty.</li>
+</ul>
+<b>Hlídač pravidel</b> je malý program z pluginu. Když změníš pravidla a člen má otevřené okno, jeho agent se to dozví při prvním uložení: jednou se zastaví, přečte si novinky a pokračuje podle nových pravidel.
+</div>
+<h3>Postup (asi hodina)</h3>
+<ol>
+<li><span class="who ag">AGENT</span> se tě zeptá na tým, členy, disk a pravidla. Co nevíš, navrhne sám.</li>
+<li><span class="who ty">TY</span> vytvoříš na disku prázdnou složku, nastavíš ji <b>offline</b> a připojíš v Coworku.</li>
+<li><span class="who ag">AGENT</span> ji naplní: pravidla, návody, složky členů, jejich instrukce.</li>
+<li><span class="who ty">TY</span> restartuješ aplikaci. Pak spolu ověříte, že hlídač běží.</li>
+<li><span class="who ag">AGENT</span> připraví pro každého člena <b>checklist</b> (co mu nasdílet a zřídit) a <b>předávací e-mail</b>.</li>
+<li><span class="who ty">TY</span> nasdílíš složku (právo úprav), pošleš e-mail a plugin.</li>
+</ol>
+<div class="warn"><b>Externisté z jiné firmy:</b> dej přednost Google Drive nebo Dropboxu. Firemní OneDrive a SharePoint cizí účet často synchronizovat nesmí.</div>
+<h3>Běžný provoz: stačí napsat</h3>
+<table>
+<tr><th>Chceš</th><th>Napiš</th></tr>
+<tr><td>změnit pravidla</td><td>„Změnil jsem pravidla: …“ (agent zapíše a zvedne verzi)</td></tr>
+<tr><td>přidat člověka</td><td>„Přidej člena Petr Svoboda“</td></tr>
+<tr><td>ukončit spolupráci</td><td>„Odchod člena Petr Svoboda“</td></tr>
+<tr><td>kontrolu pořádku</td><td>„Zkontroluj týmovou složku“</td></tr>
+</table>
+<div class="warn"><b>Do sdílené složky nikdy:</b> smlouvy, ceny, mzdy, osobní a zdravotní údaje, hesla, nastavení sítí. A pravidla neupravuj v Poznámkovém bloku ani TextEditu, vždy přes agenta.</div>
+
+<h2 class="pb">C · Nástup do týmu</h2>
+<p>Od vedoucího dostaneš e-mail s pozvánkou do sdílené složky a soubor <code>cowork-tym.plugin</code>.</p>
+<h3>Nejdřív sám (A1-A5)</h3>
+<ol>
+<li>Nainstaluj aplikaci Claude a přihlas se.</li>
+<li>V nastavení soukromí vypni používání konverzací ke zlepšování modelů.</li>
+<li><b>Google Drive:</b> na drive.google.com ve „Sdíleno se mnou“ na složce pravé tlačítko → Uspořádat → Přidat zástupce → Můj disk. Nainstaluj Google Drive pro počítač a v jeho nastavení zvol <b>Zrcadlit soubory</b>.<br><b>OneDrive:</b> „Přidat zástupce do Mého OneDrivu“, pak na složce pravé tlačítko → <b>Vždy ponechat na tomto zařízení</b>.</li>
+<li><b>Kontrola:</b> u souborů ve složce nesmí být ikona mráčku.</li>
+<li>Nainstaluj plugin (kapitola Instalace) a restartuj aplikaci.</li>
+</ol>
+<div class="say">Pak napiš: „Jsem nový člen týmu, proveď mě nastavením“</div>
+<p><span class="who ag">AGENT</span> najde složku, pomůže založit projekt a vložit instrukce a udělá s tebou krátké testy. Ten hlavní: v <b>novém okně projektu</b> se zeptáš „Jakou máš verzi pravidel a co pro tebe platí za pravidla?“ Agent musí zmínit, že <b>hlídač běží</b>, a odpovědět podle pravidel týmu.</p>
+<h3>Při práci</h3>
+<ul>
+<li>Všechno pro tým dělej v projektu týmu. Ukládej do svého adresáře <code>clen-jmeno/</code>.</li>
+<li>Agent nic neposílá ven, nic nemaže a nerozhoduje za tebe.</li>
+<li>Když agent jednou odmítne uložit, protože „se změnila pravidla“, je to v pořádku. Přečte si je a napodruhé uloží.</li>
+</ul>
+
+<h2 class="pb">Když něco nejde</h2>
+<table>
+<tr><th>Příznak</th><th>Příčina a řešení</th></tr>
+<tr><td>Agent vidí sdílenou složku prázdnou</td><td>Soubory jsou jen v cloudu. Zapni offline (Zrcadlit / Dostupné offline / Vždy ponechat na zařízení). Nesmí tam být mráčky.</td></tr>
+<tr><td>Sdílená složka se v počítači neobjeví</td><td>Google Drive: chybí zástupce v Můj disk. OneDrive: správce firmy synchronizaci zakázal, napiš vedoucímu.</td></tr>
+<tr><td>Agent neví, že „hlídač běží“</td><td>1) Úplný restart aplikace. 2) Windows: nainstaluj Git for Windows. 3) Otevři nové okno. 4) Když ani tak ne: vedoucí má v průvodci záložní ruční instalaci (asi 2 minuty v Terminálu nebo Git Bash). Práce mezitím běží dál, jen se o změnách pravidel dozvíš až v novém okně.</td></tr>
+<tr><td>Agent odpovídá obecně, ne podle pravidel</td><td>Chat není uvnitř projektu, nebo nejsou uložené instrukce projektu.</td></tr>
+<tr><td>Ve složce se objevil „soubor (1).md“</td><td>Dva lidé upravovali stejný soubor najednou. Sluč je ručně, dál upravuj jeden soubor vždy jen jeden člověk.</td></tr>
+<tr><td>Nenajdu menu, o kterém agent mluví</td><td>Názvy se mezi verzemi mění. Napiš mu, co vidíš (nebo pošli snímek obrazovky).</td></tr>
+</table>
+
+<h2>Dobré vědět</h2>
+<ul>
+<li>Hlídač pravidel je <b>pojistka proti přehlédnutí</b>, ne zámek. Když se cokoli pokazí, radši mlčí, než aby blokoval práci.</li>
+<li>Agent si mezi okny nic nepamatuje. Proto jsou pravidla a rozdělaná práce v souborech.</li>
+<li>Stav ověření: logika hlídače je otestovaná na Macu a v simulaci Windows. Spouštění hlídače uvnitř Coworku ověř sám otázkou „Jakou máš verzi pravidel?“ v novém okně.</li>
+</ul>
+<p class="small">Zdroj, novinky a hlášení chyb: GitHub repozitář cowork-tym.</p>
+</body></html>
