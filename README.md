@@ -22,6 +22,13 @@ Obsah je v obou případech stejný - `bez-pluginu/` se generuje ze zdrojů plug
 
 ## Instalace
 
+### Z marketplace (doporučeno - aktualizace přijdou samy)
+
+- **Cowork:** v části pro pluginy přidej marketplace `marekstancl/cowork-tym` (nebo `https://github.com/marekstancl/cowork-tym`) a nainstaluj plugin **cowork-tym**. Názvy tlačítek se mezi verzemi liší.
+- **Claude Code:** `/plugin marketplace add marekstancl/cowork-tym` a pak `/plugin install cowork-tym@cowork-tym`.
+
+### Ze souboru
+
 1. Stáhni soubor `cowork-tym.plugin` (sekce Releases).
 2. Otevři ho dvojklikem, nebo ho v aplikaci Claude nahraj v části pro pluginy (Cowork → Pluginy / Customize - název se může lišit podle verze). Potvrď instalaci.
 3. Aplikaci **úplně ukonči** (Mac: Cmd+Q; Windows: i ikonu Claude u hodin → Ukončit) a spusť znovu.

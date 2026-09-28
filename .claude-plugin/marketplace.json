@@ -1,0 +1,14 @@
+{
+  "name": "cowork-tym",
+  "owner": { "name": "Marek Štancl" },
+  "metadata": { "description": "Claude Cowork: základní nastavení a řízení týmu přes sdílenou složku." },
+  "plugins": [
+    {
+      "name": "cowork-tym",
+      "source": "./",
+      "description": "Průvodci pro vlastní pracovní prostor v Coworku a pro řízení zaměstnanců a externistů, s hlídačem verze pravidel.",
+      "version": "0.3.0",
+      "category": "productivity"
+    }
+  ]
+}
