@@ -7,6 +7,17 @@ Plugin pro **Claude Cowork**, který dělá dvě věci:
 
 Vše česky. Průvodci vždy říkají, co udělá **člověk** (nastavení aplikace, sdílení disku, účty) a co **agent**.
 
+## Dvě cesty - vyber si
+
+| | Plugin | Bez pluginu |
+|---|---|---|
+| Co dostaneš | soubor `cowork-tym.plugin` | obyčejné soubory v [`bez-pluginu/`](bez-pluginu/) |
+| Nastavení | průvodce tě provede větou („Nastav mi Cowork“) | vyplníš sám nebo požádáš agenta (návod v [`bez-pluginu/README.md`](bez-pluginu/README.md)) |
+| Hlídač pravidel (týmy) | instaluje se s pluginem | ruční instalace jedním příkazem |
+| Pro koho | kdo chce hotovo | kdo chce vidět a upravit každý řádek, nebo používá jiný nástroj |
+
+Obsah je v obou případech stejný - `bez-pluginu/` se generuje ze zdrojů pluginu.
+
 > **Návod pro uživatele (PDF):** [docs/cowork-tym-navod.pdf](docs/cowork-tym-navod.pdf)
 
 ## Instalace
@@ -72,6 +83,8 @@ skills/zakladni-nastaveni/  SKILL.md, assets/workspace (kostra), references/navo
 skills/tym-vedouci/         SKILL.md, assets/sablona-slozky, PROJECT-INSTRUCTIONS-vedouci.md,
                             rucni-instalace-hooku/, references/{architektura,udrzba}.md
 skills/tym-clen/            SKILL.md
+bez-pluginu/                stejný obsah jako soubory (generuje tools/build-bez-pluginu.sh)
+docs/                       PDF návod pro uživatele
 ```
 
 ## Požadavky

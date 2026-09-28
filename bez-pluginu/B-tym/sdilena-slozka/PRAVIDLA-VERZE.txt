@@ -1,0 +1,16 @@
+{DATUM}-a
+COWORK-TYM
+TYM: {TYM}
+ZDROJ-PRAVIDEL: PRAVIDLA.md v kořeni sdílené složky
+--- první řádek = platná verze (čte ji hook). Řádky výš s dvojtečkou = hlavička. ---
+
+Tenhle soubor je JEDINÝ zdroj verze pravidel. Čte ho hook i lidé.
+Když měníš pravidla, zvedni první řádek a přidej záznam do HISTORIE.
+Formát verze: RRRR-MM-DD-písmeno (např. 2026-09-28-b).
+Mění jen vedoucí - ideálně přes agenta („změnil jsem pravidla“).
+NEUPRAVUJ v Poznámkovém bloku ani TextEditu (přidají neviditelné znaky / RTF).
+Po písmenu z pokračuj na z2, z3...
+
+HISTORIE (nejnovější nahoře)
+
+{DATUM}-a  Založení týmového prostoru.

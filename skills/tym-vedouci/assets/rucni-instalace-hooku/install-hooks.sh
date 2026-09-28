@@ -5,7 +5,9 @@
 # Volitelně: bash install-hooks.sh "<cesta k PRAVIDLA-VERZE.txt>"  -> zapíše ruční cestu.
 set -u
 RUCNI_CESTA="${1:-}"
-SRC="$(cd "$(dirname "$0")/../../../../hooks" 2>/dev/null && pwd)"
+HERE="$(cd "$(dirname "$0")" && pwd)"
+if [ -f "$HERE/pre-write.sh" ]; then SRC="$HERE"            # varianta bez pluginu: skripty vedle
+else SRC="$(cd "$HERE/../../../../hooks" 2>/dev/null && pwd)"; fi  # uvnitř pluginu
 [ -n "$SRC" ] && [ -f "$SRC/pre-write.sh" ] || { echo "CHYBA: nenašel jsem složku hooks pluginu."; exit 1; }
 DST="$HOME/.claude/hooks/cowork-tym"
 S="$HOME/.claude/settings.json"
