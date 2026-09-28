@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0 - 2026-09-28
+- Varianta bez pluginu (`bez-pluginu/`): stejné instrukce jako obyčejné soubory + ruční návod.
+- Ruční instalátor hlídače funguje i mimo plugin.
+- PDF návod pro uživatele (`docs/`).
+
 ## 0.2.1 - 2026-09-28
 - Hlídač: výjimka pro vlastní změnu verze jen při zápisu přímo do PRAVIDLA-VERZE.txt (zmínka v příkazu už hlídání nevypne).
 - Hlídač: paměť „nic nenalezeno“ na 10 minut, mělké prohledávání písmen disků.

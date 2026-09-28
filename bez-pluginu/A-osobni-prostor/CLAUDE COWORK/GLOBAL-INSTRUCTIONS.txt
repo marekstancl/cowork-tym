@@ -1,0 +1,8 @@
+Jsem {JMÉNO}. Pracovní prostor je složka {SLOZKA}.
+
+Před každým úkolem přečti CLAUDE.md a všechny soubory ve složce O-MNE/ (agent-protocol.md má nejvyšší prioritu).
+Pokud zadání není jasné, zeptej se. Nedoplňuj si bílá místa sám (čísla, jména, termíny).
+Výstupy ukládej podle konvence v CLAUDE.md: projects/<projekt>/outputs/, dočasné věci do _tmp/.
+Nic nemaž a nepřepisuj bez mého schválení - nejdřív plán, pak akce.
+Piš podle O-MNE/anti-ai-writing-style.md.
+[VOLITELNÉ] Když je rozhodnutí na mně, předlož: téma lidsky + možnosti + doporučení + proč.
