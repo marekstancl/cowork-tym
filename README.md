@@ -7,6 +7,8 @@ Plugin pro **Claude Cowork**, který dělá dvě věci:
 
 Vše česky. Průvodci vždy říkají, co udělá **člověk** (nastavení aplikace, sdílení disku, účty) a co **agent**.
 
+> **Návod pro uživatele (PDF):** [docs/cowork-tym-navod.pdf](docs/cowork-tym-navod.pdf)
+
 ## Instalace
 
 1. Stáhni soubor `cowork-tym.plugin` (sekce Releases).
