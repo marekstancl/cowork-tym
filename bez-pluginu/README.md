@@ -47,7 +47,7 @@ Podrobnosti a „proč“: `A-osobni-prostor/NAVOD.md`.
    bash "<cesta>/B-tym/hlidac/install-hooks.sh" "<cesta ke sdílené složce>/PRAVIDLA-VERZE.txt"
    ```
    (Cesty stačí přetáhnout myší do okna.) Pak aplikaci úplně ukonči a spusť znovu.
-7. Založ si projekt, připoj sdílenou složku, vlož `B-tym/PROJECT-INSTRUCTIONS-vedouci.md` (blok mezi `---8<---`).
+7. Tým si ve svém osobním prostoru založ jako projekt `projects/<tym>/` podle `SABLONY/tymovy-projekt.md` (smlouvy a ceny do `outputs/_interni/`). V Coworku k projektu připoj osobní prostor i sdílenou složku a vlož `B-tym/PROJECT-INSTRUCTIONS-vedouci.md` (blok mezi `---8<---`, `{LOKALNI_CESTA}` = `projects/<tym>/outputs/_interni/`). Bez osobního prostoru stačí samostatná lokální složka mimo sdílený disk.
 8. Ověř: v novém okně „Jakou máš verzi pravidel?“ - agent musí citovat „TÝMOVÝ PROSTOR … hook cowork-tym běží“.
 9. Nasdílej složku členům (právo úprav) a pošli jim odkaz na `ZACNI-TADY.md` + složku `B-tym/hlidac/`.
 

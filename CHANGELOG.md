@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.0 - 2026-09-28
+- Dvě vrstvy: tým je u vedoucího projekt v osobním prostoru (`projects/<tym>/` s `outputs/_interni/` pro neveřejné věci). Průvodce vedoucího nabídne nejdřív osobní prostor, průvodce člena ho nabídne volitelně.
+- Šablona `SABLONY/tymovy-projekt.md`.
+- README: schéma vrstev, kdo co vidí, co je v souborech, jak s tím pracovat.
+
 ## 0.3.0 - 2026-09-28
 - Varianta bez pluginu (`bez-pluginu/`): stejné instrukce jako obyčejné soubory + ruční návod.
 - Ruční instalátor hlídače funguje i mimo plugin.

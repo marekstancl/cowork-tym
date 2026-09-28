@@ -44,26 +44,72 @@ Pro vývojáře: plugin je obyčejný zip tohoto repozitáře (`zip -r cowork-ty
 | `tym-vedouci` | vedoucí týmu | „Chci řídit externisty v Coworku" / „Přidej člena týmu" / „Změnil jsem pravidla" / „Odchod člena" |
 | `tym-clen` | člen týmu | „Jsem nový člen týmu, proveď mě nastavením" |
 
-## Jak funguje týmový prostor (B)
+## Jak to funguje
+
+### Dvě vrstvy
 
 ```
-CLOUDOVÝ DISK (vlastní vedoucí, sdílí s členy)
-└── sdílená složka/
-    ├── PRAVIDLA-VERZE.txt   1. řádek = verze pravidel (čtou hooky)
-    ├── PRAVIDLA.md          jediný zdroj pravidel
-    ├── instrukce/           onboarding, projektové instrukce člena
-    ├── sablony/  kb/  lide/  vedouci/
-    └── clen-<jméno>/        celá práce člena (po odchodu zůstává týmu)
+┌─────────────────────────────────────────────────────────────┐
+│  TÝMY  (volitelné)   projects/<tym>/  +  sdílená složka     │  ← skill tym-vedouci / tym-clen
+├─────────────────────────────────────────────────────────────┤
+│  OSOBNÍ PROSTOR      CLAUDE COWORK/ : O-MNE/, projects/,    │  ← skill zakladni-nastaveni
+│                      SABLONY/, globální instrukce           │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-- **Project Instructions** člena obsahují jen „na začátku sezení přečti PRAVIDLA.md". Změna pravidel se tak nepřeposílá - další okno ji má.
-- **Hooky** (součást pluginu):
-  - *SessionStart* - otiskne verzi pravidel sezení a připomene agentovi, co načíst.
-  - *PreToolUse* (zápis souborů a zapisující akce konektorů) - když se verze od startu sezení změnila, **jednou** zápis odmítne a vypíše, co se změnilo. Druhý pokus projde.
-  - **Fail-open**: když cokoli chybí nebo selže, hook mlčí a nic neblokuje.
-  - Soubor s verzí najdou samy (`PRAVIDLA-VERZE.txt` se značkou `COWORK-TYM` ve složce okna, v cloudových discích, na Windows i na písmenech disků). Pevná cesta: ruční instalátor s cestou jako parametrem, nebo proměnná `COWORK_TYM_VERZE_FILE`.
-  - Zastaví zápis souborů, příkazy shellu i zapisující akce konektorů. Změnu, kterou udělalo samo okno vedoucího, nezastaví.
-- Citlivé věci (smlouvy, ceny, osobní údaje, hesla, konfigurace infrastruktury) zůstávají lokálně u vedoucího.
+Osobní prostor je základ: Claude zná tebe, tvůj styl a tvoje projekty. Tým je u vedoucího **jeden z jeho projektů**, ke kterému je navíc připojená sdílená složka. Člen může mít osobní prostor taky (volitelně), jinak mu stačí projekt se sdílenou složkou.
+
+### Kdo co vidí
+
+```
+VEDOUCÍ - počítač                        ČLEN - počítač
+┌──────────────────────────────┐        ┌──────────────────────────────┐
+│ Cowork projekt „Tým“         │        │ Cowork projekt „Tým“         │
+│  připojeno:                  │        │  připojeno:                  │
+│   • osobní prostor           │        │   • sdílená složka           │
+│     (projects/<tym>/_interni)│        │   (• osobní prostor - volit.)│
+│   • sdílená složka           │        │                              │
+│  hlídač pravidel (plugin)    │        │  hlídač pravidel (plugin)    │
+└──────────────┬───────────────┘        └───────────────┬──────────────┘
+               └──────── cloudový disk (Drive, OneDrive…) ┘
+```
+
+**Sdílená složka** (vidí vedoucí i členové):
+
+| Cesta | Obsah po založení | Vedoucí | Člen |
+|---|---|---|---|
+| `ZACNI-TADY.md`, `README.md` | hotový úvod a mapa složky | píše | čte |
+| `PRAVIDLA.md` | kostra + tvoje pravidla z rozhovoru, **jediný zdroj pravidel** | píše | čte |
+| `PRAVIDLA-VERZE.txt` | verze + historie změn | zvedá verzi | čte (hlídač) |
+| `instrukce/` | onboarding, instrukce projektu pro každého člena | píše | čte |
+| `sablony/` | prázdné | šablony dokumentů | používá |
+| `kb/INDEX.md` | prázdný rejstřík | schvaluje | agent přidává články |
+| `lide/kontakty.md` | jména, role, pracovní e-maily | píše | čte |
+| `vedouci/` | prázdné | výstupy pro tým | čte |
+| `clen-<jmeno>/` | `vystupy/`, `_tmp/`, `VYJIMKY.md`, `NEDOKONCENE-ZAPISY.md` | čte | **jeho pracovní adresář** |
+
+**Jen u vedoucího** (`projects/<tym>/outputs/_interni/`): smlouvy, ceny, personální údaje, konfigurace sítí. Nikdy do sdílené složky.
+
+### Jak s tím pracovat - stačí napsat
+
+| Kdo | Věta | Co se stane |
+|---|---|---|
+| vedoucí | „Změnil jsem pravidla: …“ | agent ukáže změnu, po schválení zapíše do `PRAVIDLA.md`, zvedne verzi a do historie napíše, co se změnilo |
+| vedoucí | „Přidej člena Petr Svoboda“ | založí `clen-petr-svoboda/`, jeho instrukce, kontakt; připraví checklist a předávací e-mail |
+| vedoucí | „Odchod člena Petr Svoboda“ | řekne, jaké přístupy odebrat; jeho adresář zůstane týmu |
+| vedoucí | „Zkontroluj týmovou složku“ | najde duplikáty, visící zápisy, citlivé údaje, výjimky, které by měly být pravidlem |
+| člen | „Jsem nový člen týmu, proveď mě nastavením“ | najde složku, pomůže s projektem, projde testy |
+| člen | běžná práce | agent si na začátku přečte pravidla, ukládá do `clen-<jmeno>/`, nic neposílá ven, nemaže, nerozhoduje sám |
+
+**Když vedoucí změní pravidla během práce člena:** hlídač při prvním zápisu jednou zastaví agenta člena a vypíše novinky. Agent si pravidla přečte znovu, zkontroluje rozdělaný úkol a zapíše napodruhé.
+
+### Technicky: hlídač pravidel (hooky)
+
+- *SessionStart* otiskne verzi pravidel sezení a připomene agentovi, co načíst (hláška „TÝMOVÝ PROSTOR … hook cowork-tym běží“).
+- *PreToolUse* (zápis souborů, shell, zapisující akce konektorů): když se verze od startu změnila, **jednou** odmítne a vypíše novinky z historie. Druhý pokus projde. Vlastní změnu verze vedoucím nezastaví.
+- **Fail-open**: když cokoli chybí nebo selže, mlčí a nic neblokuje. Pojistka proti přehlédnutí, ne zámek.
+- Soubor s verzí najde sám (`PRAVIDLA-VERZE.txt` se značkou `COWORK-TYM` ve složce okna, v cloudových discích, na Windows i na písmenech disků). Pevná cesta: ruční instalátor s parametrem, nebo `COWORK_TYM_VERZE_FILE`.
+- Instrukce projektu člena obsahují jen „na začátku sezení přečti PRAVIDLA.md“, takže změny pravidel se nikomu nepřeposílají.
 
 ### Kritické podmínky
 

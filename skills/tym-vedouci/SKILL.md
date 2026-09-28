@@ -13,6 +13,10 @@ Proč je to postavené takhle: `references/architektura.md`. Údržba: `referenc
 
 Zeptej se (AskUserQuestion), pokud to není jasné: založit prostor (§1-7) / přidat člena / změnit pravidla / odchod člena / kontrola stavu (vše `references/udrzba.md`). Zjisti Mac nebo Windows.
 
+**Osobní prostor (vrstva pod týmem).** Při zakládání zjisti, jestli má vedoucí osobní pracovní prostor ze skillu `zakladni-nastaveni` (složka s `O-MNE/` a `projects/`). Vysvětli jednou větou proč: tým pak bude jeden z jeho projektů a neveřejné věci (smlouvy, ceny) mají přirozené místo, které tým nevidí.
+- **Má** → pokračuj; tým bude `projects/<tym>/` (§4).
+- **Nemá** → nabídni nejdřív základní nastavení (cca 30 min; spusť skill `zakladni-nastaveni`, pak se vrať sem). Když odmítne, pokračuj bez něj - lokální část pak bude samostatná složka, kterou si vytvoří (§4).
+
 ## 1. Rozhovor
 
 Po skupinách, max 4 otázky najednou, nabízej možnosti:
@@ -47,8 +51,11 @@ Plugin obsahuje dva malé skripty: při startu okna si zapamatují verzi pravide
 
 ## 4. Projekt vedoucího
 
-- **Udělám já:** vyplň `assets/PROJECT-INSTRUCTIONS-vedouci.md` (bez lokální části smaž bod 3). Když má vedoucí osobní prostor (skill `zakladni-nastaveni`), ulož do `projects/<tym>/PROJECT-INSTRUCTIONS.md`, jinak jen ukaž v bloku kódu.
-- **Děláš ty:** založ v Coworku projekt, připoj sdílenou složku (a svou lokální složku, pokud ji máš) a vlož text do instrukcí projektu.
+Tým je u vedoucího **projekt v jeho osobním prostoru**. Vzor struktury: `SABLONY/tymovy-projekt.md` v osobním prostoru (nebo `${CLAUDE_PLUGIN_ROOT}/skills/zakladni-nastaveni/assets/workspace/SABLONY/tymovy-projekt.md`).
+
+- **Udělám já (s osobním prostorem):** založ `projects/<tym>/` podle vzoru: `README.md`, `PROJECT-INSTRUCTIONS.md` (z `assets/PROJECT-INSTRUCTIONS-vedouci.md`), `outputs/_interni/` (smlouvy, ceny, interní podklady - jen u vedoucího), `workshop/handoffs/{active,archive}/`. `{LOKALNI_CESTA}` = `projects/<tym>/outputs/_interni/`.
+- **Udělám já (bez osobního prostoru):** doporuč vytvořit lokální složku `<Tym>-interni` mimo sdílenou složku (ne na sdíleném disku), `{LOKALNI_CESTA}` = její název; nebo bod 3 v instrukcích smaž. Instrukce jen ukaž v bloku kódu.
+- **Děláš ty:** v Coworku založ projekt `<tym>`. Připoj osobní prostor (celý) **a** sdílenou složku jako dvě samostatné složky. Vlož text do instrukcí projektu.
 
 ## 5. Onboarding člena
 

@@ -48,6 +48,10 @@ Testovací soubor nech v `_tmp/`.
 
 5-8 vět z `PRAVIDLA.md`: odkud chodí práce, pořadí, kam ukládat, jak uzavřít úkol, co agent nedělá. A: „Když ti agent jednou odmítne uložit s tím, že se změnila pravidla, je to v pořádku - načte je a uloží napodruhé."
 
+## 7. Volitelně: osobní prostor
+
+Na konec nabídni jednou větou: „Chceš si udělat i vlastní pracovní prostor (profil, styl psaní, šablony)? Týmový projekt pak bude jeden z tvých projektů. Zabere asi 30 minut, napiš ‚Nastav mi Cowork‘.“ Když ano, sdílená složka zůstává **samostatně připojená** k týmovému projektu; do osobního prostoru ji nekopíruj a týmové soubory do něj nepřesouvej.
+
 ## Pravidla pro tebe
 
 - Odmítnutí hlídače nikdy neobcházej.
