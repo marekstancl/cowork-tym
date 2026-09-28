@@ -1,0 +1,15 @@
+{
+  "name": "cowork-tym",
+  "version": "0.2.1",
+  "description": "Sdílený pracovní prostor v Coworku pro vedoucího a podřízené (zaměstnance, externisty): sdílená složka, pravidla s verzí hlídanou hooky, onboarding člena a údržba. Průvodce podle role.",
+  "author": {
+    "name": "Marek Štancl"
+  },
+  "keywords": [
+    "cowork",
+    "tym",
+    "onboarding",
+    "hooks",
+    "sdilena-slozka"
+  ]
+}
