@@ -179,6 +179,23 @@ Máš <b>sdílenou složku</b> na cloudovém disku (Google Drive, OneDrive, Drop
 </table>
 <p>Instrukce každého projektu jsou uložené jako soubor <code>PROJECT-INSTRUCTIONS.md</code>, takže je na novém počítači jen vložíš. Nic ze starého počítače se ručně nekopíruje.</p>
 
+
+<h2 class="pb">H · Sdílené skilly a hlídač (pro týmy)</h2>
+<p><b>Skill</b> je návod, který si Claude otevře sám, když na danou věc přijde řeč. Vedoucí je pro tým ukládá do složky <code>skilly/</code> ve sdílené složce.</p>
+<ol>
+<li><span class="who ty">VEDOUCÍ</span> vytvoří nebo upraví skill. Agent se zeptá: <i>„Je jen pro tebe, nebo i pro tým?“</i> Sdílenou verzi (bez hesel a interních údajů) uloží do <code>skilly/</code> a zvýší číslo verze.</li>
+<li><span class="who ag">HLÍDAČ</span> při startu okna u člena zjistí, že je nová verze, a agent napíše: <i>„napiš: aktualizuj skilly“</i>.</li>
+<li><span class="who ty">ČLEN</span> napíše „aktualizuj skilly“ a potvrdí nabídnuté uložení. Nic se neinstaluje bez potvrzení.</li>
+</ol>
+<h3>Co hlídač dělá a proč</h3>
+<table>
+<tr><th>Kdy</th><th>Co</th></tr>
+<tr><td>start okna</td><td>řekne agentovi platnou verzi pravidel a upozorní na nové skilly</td></tr>
+<tr><td>před zápisem</td><td>když se mezitím změnila pravidla, zápis jednou zastaví a pošle agenta přečíst nová pravidla</td></tr>
+<tr><td>při vlastní chybě</td><td>nic neblokuje, jen ohlásí, že neběží</td></tr>
+</table>
+<p class="small">Hlídač je jen na věci, které musí platit vždy. Rozhodnutí a dialog patří do instrukcí projektu. Podrobně: <code>hooky-kdy-a-proc.md</code>.</p>
+
 <h2 class="pb">Když něco nejde</h2>
 <table>
 <tr><th>Příznak</th><th>Příčina a řešení</th></tr>
