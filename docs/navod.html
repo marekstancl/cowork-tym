@@ -20,17 +20,22 @@ code{font-family:"DejaVu Sans Mono",monospace;font-size:9pt;background:#f1f4f4;p
 
 <div class="cover">
 <h1>cowork-tym</h1>
-<p class="lead">Návod pro uživatele. Jak si uspořádat Claude Cowork a jak přes něj řídit zaměstnance nebo externisty. Bez IT znalostí.</p>
-<p class="small" style="margin-top:30mm">Verze 0.4 · září 2026 · licence MIT</p>
+<p class="lead">Návod pro uživatele. Jak si uspořádat Claude Cowork, mít pořádek v projektech a souborech, pracovat z více počítačů a řídit zaměstnance nebo externisty. Bez IT znalostí.</p>
+<p class="small" style="margin-top:30mm">Verze 0.5 · říjen 2026 · licence MIT</p>
 </div>
 
 <h2 class="pb">Co to je a pro koho</h2>
-<p><b>cowork-tym</b> je doplněk (plugin) do aplikace Claude, do režimu Cowork. Přidá tři průvodce. Každého spustíš jednou větou a on tě provede krok za krokem.</p>
+<p><b>cowork-tym</b> je doplněk (plugin) do aplikace Claude, do režimu Cowork. Přidá průvodce, které spustíš jednou větou a oni tě provedou krok za krokem. <b>Nevíš, kde začít? Napiš „Jak začít?“</b> - průvodce se zeptá na 2-3 věci a doporučí pořadí.</p>
 <table>
 <tr><th>Chci…</th><th>Napiš v Coworku</th><th>Kapitola</th></tr>
+<tr><td>vědět, co plugin umí a kde začít</td><td>„Jak začít?“</td><td>-</td></tr>
 <tr><td>si uspořádat svůj pracovní prostor</td><td>„Nastav mi Cowork“</td><td>A</td></tr>
 <tr><td>řídit zaměstnance nebo externisty</td><td>„Chci řídit externisty v Coworku“</td><td>B</td></tr>
 <tr><td>nastoupit do týmu, kam mě pozvali</td><td>„Jsem nový člen týmu, proveď mě nastavením“</td><td>C</td></tr>
+<tr><td>mít přehled v chatech a souborech</td><td>„Jak si to zorganizovat?“</td><td>D</td></tr>
+<tr><td>nový projekt, nebo uklidit soubory z OneDrivu</td><td>„Založ projekt Dům“</td><td>E</td></tr>
+<tr><td>pracovat z více počítačů, mít zálohu</td><td>„Chci Cowork na dvou počítačích“</td><td>F</td></tr>
+<tr><td>přejít na nový počítač</td><td>„Přecházím na nový počítač“</td><td>G</td></tr>
 </table>
 <p>Průvodce vždy řekne, co uděláš <span class="who ty">TY</span> (klikání v aplikaci, na disku, účty) a co udělá <span class="who ag">AGENT</span> (soubory, texty, kontroly). Když něco na obrazovce nevidíš tak, jak ti popisuje, napiš mu, co vidíš. Poradí podle toho.</p>
 
@@ -45,8 +50,7 @@ code{font-family:"DejaVu Sans Mono",monospace;font-size:9pt;background:#f1f4f4;p
 <h2>Instalace pluginu (jednou, 5 minut)</h2>
 <ol>
 <li>Měj aplikaci <b>Claude</b> pro Mac nebo Windows s placeným plánem (claude.ai/download).</li>
-<li>Stáhni soubor <code>cowork-tym.plugin</code> (od kolegy nebo z GitHubu, sekce Releases).</li>
-<li>Otevři ho dvojklikem, nebo ho v aplikaci nahraj v části pro pluginy. Potvrď instalaci.</li>
+<li>V aplikaci v části pro pluginy přidej marketplace <code>marekstancl/cowork-tym</code> a nainstaluj plugin <b>cowork-tym</b> (aktualizace pak přijdou samy). Nebo stáhni soubor <code>cowork-tym.plugin</code> (GitHub, Releases) a otevři ho dvojklikem.</li>
 <li><b>Aplikaci úplně ukonči a spusť znovu.</b> Mac: Cmd+Q. Windows: zavři okno a u hodin klikni pravým na ikonu Claude → Ukončit.</li>
 <li><b>Jen Windows a jen pro týmy (B, C):</b> nainstaluj <b>Git for Windows</b> z git-scm.com, všechno nech na výchozích volbách.</li>
 </ol>
@@ -123,6 +127,57 @@ Máš <b>sdílenou složku</b> na cloudovém disku (Google Drive, OneDrive, Drop
 <li>Agent nic neposílá ven, nic nemaže a nerozhoduje za tebe.</li>
 <li>Když agent jednou odmítne uložit, protože „se změnila pravidla“, je to v pořádku. Přečte si je a napodruhé uloží.</li>
 </ul>
+
+
+<h2 class="pb">D · Jak si práci zorganizovat</h2>
+<div class="say">Napiš: „Jak si to zorganizovat?“</div>
+<p>Cowork má dvě úrovně: <b>vlevo</b> projekty a chaty, <b>vpravo</b> (ve složce) soubory. Drž je ve stejné logice.</p>
+<table>
+<tr><th>Co</th><th>Pravidlo</th><th>Příklad</th></tr>
+<tr><td>Projekt</td><td>jedna oblast práce nebo života, ne jeden úkol</td><td>Firma · Klient Novák · Dům · Osobní</td></tr>
+<tr><td>Chat</td><td>dlouhodobé téma, vracíš se do něj; <code>(ZKRATKA) - Téma</code></td><td>(DŮM) - Stavební povolení</td></tr>
+<tr><td>Víc chatů v projektu</td><td>očísluj pro pořadí</td><td>NOVÁK - 0. Obecné · NOVÁK - 1. Úkoly</td></tr>
+<tr><td>Opakované věci</td><td>naplánovaná úloha s jasným jménem</td><td>Ranní přehled · Týdenní údržba</td></tr>
+<tr><td>Nejčastější chaty</td><td>připnout nahoru</td><td>2-3 chaty</td></tr>
+<tr><td>Soubory</td><td><code>RRRR-MM-DD_kdo_co.pdf</code>, bez hesel a čísel účtů v názvu</td><td>2026-10-05_dodavatel-energie_smlouva.pdf</td></tr>
+</table>
+<p><span class="who ty">TY</span> přejmenováváš chaty (pravé tlačítko nebo tři tečky → Přejmenovat). <span class="who ag">AGENT</span> ti jméno navrhne a naplánovaným úlohám ho nastaví sám.</p>
+<h3>Tři návyky</h3>
+<ol><li>Pracuj vždy v chatu <b>ve správném projektu</b> - pak Claude zná pravidla a ukládá na správné místo.</li><li>Povedený výsledek: „Ulož to jako šablonu.“</li><li>Konec delší práce: „Udělej předávku.“ Příště se navazuje bez vysvětlování.</li></ol>
+
+<h2 class="pb">E · Nový projekt a převzetí souborů</h2>
+<div class="say">Napiš: „Založ projekt Dům“ nebo „Převezmi moje soubory z OneDrivu“</div>
+<p>Založení zabere 10 minut. <span class="who ag">AGENT</span> vytvoří složky a instrukce, <span class="who ty">TY</span> založíš projekt v aplikaci a vložíš instrukce.</p>
+<p>Když už máš soubory jinde, převezmou se <b>po dávkách</b>:</p>
+<ol>
+<li><span class="who ag">AGENT</span> řekne, které složky vidí, a projde je jen čtením: počty, duplicity, soubory jen v cloudu, citlivé věci v názvech.</li>
+<li>Dostaneš <b>revizi jako stránku</b>: co nechat, přesunout, archivovat, smazat, a návrh struktury.</li>
+<li>Ptá se na <b>vztahy</b> („čí je ta nemovitost?“), ne na složky. Spolu sepíšete <code>PRAVIDLA.md</code>.</li>
+<li>Každou dávku nejdřív navrhne, ty ji schválíš, pak se provede a zapíše do logu. Duplicity jdou nejdřív do archivu a mažou se po měsíci.</li>
+<li>Na konci: rozcestník <code>INDEX.md</code> („hledáš X → je v Y“) a závěrečný report.</li>
+</ol>
+<div class="warn">Majitel nemovitostí: dokumenty k jednomu domu (katastr, hypotéka, energie, pronájem) patří k domu, ne do financí. Daně a banky patří k osobě.</div>
+
+<h2 class="pb">F · Více počítačů a záloha</h2>
+<div class="say">Napiš: „Chci Cowork na dvou počítačích“</div>
+<p>Účet Claude přenáší chaty, pluginy a instrukce, ale <b>ne tvoje soubory</b>. Složka potřebuje středobod, se kterým se počítače srovnávají.</p>
+<table>
+<tr><th></th><th>A) Cloud (doporučeno pro většinu)</th><th>B) Vlastní server</th></tr>
+<tr><td>Co potřebuješ</td><td>OneDrive / Google Drive / Dropbox</td><td>server nebo NAS, který běží pořád</td></tr>
+<tr><td>Nastavení</td><td>15 minut</td><td>půl dne (dělá Claude Code na serveru)</td></tr>
+<tr><td>Konflikt</td><td>kopie s názvem počítače</td><td>kopie .sync-conflict</td></tr>
+<tr><td>Smazaný soubor</td><td>koš cloudu</td><td>verze na serveru + šifrovaná záloha</td></tr>
+<tr><td>Data leží</td><td>u poskytovatele cloudu</td><td>u tebe</td></tr>
+</table>
+<div class="warn">Cloud: u složky musí být zapnuté <b>„Vždy ponechat na tomto zařízení“</b>. Jinak jsou soubory jen ikonky a Claude je nepřečte. Stejný soubor needituj na dvou počítačích současně.</div>
+
+<h2>G · Nový nebo další počítač</h2>
+<div class="say">Napiš: „Přecházím na nový počítač“</div>
+<table>
+<tr><th>Přenese se samo (účet Claude)</th><th>Nastavíš znovu</th></tr>
+<tr><td>historie chatů a úloh, projekty založené v aplikaci, pluginy, instrukce v Nastavení, úlohy běžící v cloudu</td><td>složka se soubory (přes středobod z F), projekty založené ze složky, oprávnění aplikace</td></tr>
+</table>
+<p>Instrukce každého projektu jsou uložené jako soubor <code>PROJECT-INSTRUCTIONS.md</code>, takže je na novém počítači jen vložíš. Nic ze starého počítače se ručně nekopíruje.</p>
 
 <h2 class="pb">Když něco nejde</h2>
 <table>

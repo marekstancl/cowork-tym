@@ -5,6 +5,8 @@ description: Guides a team leader (Mac or Windows, little IT experience assumed)
 
 # Týmový prostor - strana vedoucího
 
+> **Na začátku řekni uživateli (svými slovy, max. 4 věty):** Co udělám: nastavím sdílenou složku, přes kterou zadáváš práci lidem (zaměstnancům, externistům), s jedněmi pravidly, které hlídá aplikace sama. Zabere to 1 hodina + 20 minut na každého člena. Na konci budeš mít: tým pracuje podle tvých pravidel a ty víš, kdo co dělá. Kdykoli můžeš přestat a pokračovat jindy - napiš „pokračuj".
+
 Proveď vedoucího nastavením a provozem týmového prostoru. Počítej s tím, že **nemá IT znalosti**: česky, krátce, bez žargonu (hook = „hlídač pravidel", placeholder nepoužívej vůbec). U každého kroku napiš **„Děláš ty:"** / **„Udělám já:"** a po krocích člověka čekej na potvrzení. Názvy menu uváděj jako pravděpodobné; když je uživatel nevidí, nech ho popsat obrazovku a nevymýšlej.
 
 Proč je to postavené takhle: `references/architektura.md`. Údržba: `references/udrzba.md`. Vzory: `assets/`.
@@ -77,3 +79,6 @@ Shrň vedoucímu v 5 bodech: kde co je, jak mění pravidla („Změnil jsem pra
 - Změna pravidel vždy se zvednutím verze (postup v `references/udrzba.md`).
 - Do práce členů v `clen-*` nezasahuj; smíš jen založit adresář nového člena a označit odchod.
 - Netvrď, že jsi něco nastavil v aplikaci nebo na disku - to dělá člověk.
+
+## Sdílené skilly pro tým
+Postupy, které má tým používat automaticky, dej jako skilly do `skilly/` ve sdílené složce (návod v `skilly/README.md`). Při vytváření nebo změně skillu se vedoucího vždy zeptej: *jen osobní, nebo i pro tým?* Sdílená verze bez hesel, přístupů a interních údajů → `skilly/<nazev>/SKILL.md`, zápis do `skilly/INDEX.md`, zvýšit první řádek `skilly/VERZE.txt`. Hlídač pak členům nabídne „aktualizuj skilly“; instalaci potvrzuje člověk. U vedoucího zapiš do značky `vlastnik`. Kdy co řešit hookem a kdy instrukcí: `references/hooky-kdy-a-proc.md`.

@@ -5,6 +5,8 @@ description: Guided setup of a personal Claude Cowork workspace (folder structur
 
 # Základní nastavení Cowork pracovního prostoru
 
+> **Na začátku řekni uživateli (svými slovy, max. 4 věty):** Co udělám: postavím ti pracovní prostor: složku s pořádkem, soubory o tobě (aby Claude věděl, kdo jsi a jak pracuješ), instrukce a první projekt. Zabere to asi 30-45 minut. Na konci budeš mít: složka `CLAUDE COWORK` připojená v Coworku, projekt General, který zná tvoje pravidla. Kdykoli můžeš přestat a pokračovat jindy - napiš „pokračuj".
+
 Proveď uživatele nastavením osobního pracovního prostoru. Počítej s tím, že uživatel **nemá IT znalosti**: mluv česky (nebo jeho jazykem), krátkými větami, bez slov jako workspace, placeholder, Markdown, konektor, hook - když musíš, vysvětli je v závorce jednou větou. U každého kroku napiš **„Děláš ty:"** a **„Udělám já:"** a po každém kroku, který dělá člověk, počkej na potvrzení.
 
 Kostra je v `${CLAUDE_PLUGIN_ROOT}/skills/zakladni-nastaveni/assets/workspace/`. Vysvětlení „proč" pro člověka je v `references/navod-pro-cloveka.md`.
@@ -26,7 +28,7 @@ Zjisti: jméno (v 1. pádě), Mac nebo Windows.
 
 - **Děláš ty:** vytvoř složku `CLAUDE COWORK`:
   - Mac: ve Finderu otevři domovskou složku (menu Otevřít → Domů, zkratka Cmd+Shift+H), pak Soubor → Nová složka (Cmd+Shift+N) a pojmenuj ji.
-  - Windows: v `C:\Users\<tvoje jméno>\` (v Průzkumníku do adresního řádku napiš `%USERPROFILE%` a Enter, pak pravé tlačítko do prázdného místa → Nový → Složka). **Ne** do Dokumentů, na Plochu ani do OneDrive - ty se často synchronizují do cloudu a Cowork pak soubory nevidí.
+  - Windows: v `C:\Users\<tvoje jméno>\` (v Průzkumníku do adresního řádku napiš `%USERPROFILE%` a Enter, pak pravé tlačítko do prázdného místa → Nový → Složka). **Ne** do Dokumentů, na Plochu ani do OneDrive - ty se často synchronizují do cloudu a Cowork pak soubory nevidí. (Kdo chce pracovat z více počítačů, nastaví to později vědomě přes skill `stred-workspace`.)
   - Pak ji v Coworku **připoj jako pracovní složku** (obvykle tlačítkem pro přidání složky u okna chatu).
 - **Udělám já:** ověř, že složku vidíš (vypiš její obsah). Když ji nevidíš, řekni to a vrať se k připojení - nepokračuj.
 - **Udělám já:** zkopíruj celou kostru do připojené složky. **Nic nepřepisuj**; když soubor existuje, vypiš kolize a zeptej se. Nahraď `{JMÉNO}` jménem (1. pád) a `{SLOZKA}` jen názvem složky (např. `CLAUDE COWORK`, ne celou cestou). Nemaž `.gitkeep` a řekni uživateli, ať je nemaže taky (drží prázdné složky).

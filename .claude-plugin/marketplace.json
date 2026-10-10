@@ -11,7 +11,7 @@
       "name": "cowork-tym",
       "source": "./",
       "description": "Průvodci pro vlastní pracovní prostor v Coworku a pro řízení zaměstnanců a externistů, s hlídačem verze pravidel.",
-      "version": "0.4.0",
+      "version": "0.5.0",
       "category": "productivity"
     }
   ]

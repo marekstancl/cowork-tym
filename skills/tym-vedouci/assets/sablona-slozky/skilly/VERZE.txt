@@ -1,0 +1,3 @@
+0
+--- první řádek = verze sady skillů (zvyšuje vedoucí při každé změně), níž historie ---
+0 | složka založena, zatím žádný skill

@@ -11,6 +11,7 @@ Rozdíl proti pluginu: **nikdo tě neprovede.** Soubory vyplníš sám, nebo je 
 |---|---|
 | `A-osobni-prostor/` | vlastní pracovní prostor (kostra `CLAUDE COWORK` + `NAVOD.md`) |
 | `B-tym/` | řízení zaměstnanců a externistů (sdílená složka, instrukce, hlídač) |
+| `C-dalsi-postupy/` | průvodce a organizace práce, nový projekt a převzetí dat, více počítačů (cloud nebo server), nový počítač - postupy jako text, dej je agentovi přečíst |
 
 Vygenerováno ze stejných zdrojů jako plugin (`tools/build-bez-pluginu.sh`), takže je vždy aktuální.
 
@@ -62,3 +63,7 @@ Postup je v `sdilena-slozka/instrukce/ONBOARDING-clen.md`. Místo instalace plug
 ---
 
 Chování hlídače, omezení a řešení problémů: `B-tym/architektura.md` a PDF návod v `docs/`.
+
+## C. Další postupy
+
+Připoj složku `C-dalsi-postupy` a napiš agentovi např.: *„Přečti C-dalsi-postupy/novy-projekt.md a proveď mě podle něj.“* Totéž s `pruvodce.md` (organizace práce), `stred-workspace.md` (více počítačů, záloha) a `nove-pc.md`.

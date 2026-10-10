@@ -1,5 +1,7 @@
 # cowork-tym
 
+> **Nejsi programátor? Začni tady: [docs/ZACNI-TADY.md](docs/ZACNI-TADY.md)** - za 5 minut víš, co to umí a jak začít. Po instalaci stačí v Coworku napsat **„Jak začít?“**
+
 Plugin pro **Claude Cowork**, který dělá dvě věci:
 
 - **A. Základní uspořádání Coworku** pro kohokoli - pracovní složka, profil „O-MNE", pravidla pro agenta, styl psaní bez AI frází, globální a projektové instrukce, šablony, handoffy mezi okny.
@@ -40,9 +42,13 @@ Pro vývojáře: plugin je obyčejný zip tohoto repozitáře (`zip -r cowork-ty
 
 | Skill | Kdo | Začni větou |
 |---|---|---|
+| `pruvodce` | kdokoli, hned po instalaci | „Jak začít?" |
 | `zakladni-nastaveni` | kdokoli | „Nastav mi Cowork" |
 | `tym-vedouci` | vedoucí týmu | „Chci řídit externisty v Coworku" / „Přidej člena týmu" / „Změnil jsem pravidla" / „Odchod člena" |
 | `tym-clen` | člen týmu | „Jsem nový člen týmu, proveď mě nastavením" |
+| `novy-projekt` | kdokoli | „Založ projekt X" / „Převezmi moje soubory z OneDrivu do Coworku" |
+| `stred-workspace` | kdo chce workspace na více PC nebo zálohu | „Chci Cowork na dvou počítačích" / „Napoj workspace na server" |
+| `nove-pc` | nový nebo další počítač | „Připoj další počítač" / „Přecházím na nový počítač" |
 
 ## Jak to funguje
 
@@ -132,12 +138,16 @@ bash "<cesta k pluginu>/skills/tym-vedouci/assets/rucni-instalace-hooku/install-
 ```
 .claude-plugin/plugin.json
 hooks/                      hooks.json, session-start.sh, pre-write.sh, common.sh
+skills/pruvodce/            SKILL.md (rozcestník)
 skills/zakladni-nastaveni/  SKILL.md, assets/workspace (kostra), references/navod-pro-cloveka.md
 skills/tym-vedouci/         SKILL.md, assets/sablona-slozky, PROJECT-INSTRUCTIONS-vedouci.md,
-                            rucni-instalace-hooku/, references/{architektura,udrzba}.md
+                            rucni-instalace-hooku/, references/{architektura,udrzba,hooky-kdy-a-proc}.md
 skills/tym-clen/            SKILL.md
-bez-pluginu/                stejný obsah jako soubory (generuje tools/build-bez-pluginu.sh)
-docs/                       PDF návod pro uživatele
+skills/novy-projekt/        SKILL.md, references/prevzeti-dat-poznatky.md
+skills/stred-workspace/     SKILL.md, references/{zadani-sablona.md,schema.svg}
+skills/nove-pc/             SKILL.md
+bez-pluginu/                stejný obsah jako soubory: A osobní prostor, B tým, C další postupy (generuje tools/build-bez-pluginu.sh)
+docs/                       ZACNI-TADY.md (pro lidi), navod.html → cowork-tym-navod.pdf
 ```
 
 ## Požadavky

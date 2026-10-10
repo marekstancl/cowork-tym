@@ -20,4 +20,18 @@ Sdílená složka: $(dirname "$VERZE_FILE")
 Pokud pracuješ v tomto týmovém projektu: než začneš, přečti pravidla ($ZDROJ) a řiď se jimi.
 Když se pravidla během sezení změní, dozvíš se to při prvním zápisu.
 TXT
+# Sdílené skilly: jen upozornění, instalaci potvrzuje člověk (viz skilly/README.md).
+SD=$(dirname "$VERZE_FILE")
+if [ -f "$SD/skilly/VERZE.txt" ]; then
+  SV=$(cti_verzi "$SD/skilly/VERZE.txt")
+  ZN="$HOME/.claude/cowork-tym-skilly-$(printf '%s' "$SD" | cksum | cut -d' ' -f1)"
+  NAINST=$(cat "$ZN" 2>/dev/null | cisti)
+  if [ -n "$SV" ] && [ "$SV" != "0" ] && [ "$NAINST" != "vlastnik" ] && [ "$SV" != "$NAINST" ]; then
+    cat <<TXT2
+SKILLY: ve sdílené složce je sada skillů verze $SV, na tomto počítači ${NAINST:-žádná}.
+Řekni uživateli jednou větou: "Jsou nové nebo změněné sdílené skilly, napiš: aktualizuj skilly."
+Postup: $SD/skilly/README.md. Po instalaci zapiš verzi do: $ZN
+TXT2
+  fi
+fi
 exit 0

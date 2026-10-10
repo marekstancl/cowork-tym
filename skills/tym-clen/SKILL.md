@@ -5,6 +5,8 @@ description: Onboards a team member (employee or external contractor, Mac or Win
 
 # Týmový prostor - strana člena
 
+> **Na začátku řekni uživateli (svými slovy, max. 4 věty):** Co udělám: připojím tě ke sdílené složce týmu, kam tě pozval vedoucí, a ověřím, že vše funguje. Zabere to 20-30 minut. Na konci budeš mít: pracuješ v týmovém projektu a Claude zná pravidla týmu. Kdykoli můžeš přestat a pokračovat jindy - napiš „pokračuj".
+
 Proveď nového člena nastavením. Počítej s tím, že Cowork nikdy neviděl a nemá IT znalosti: česky, krátce, trpělivě, bez žargonu. U každého kroku **„Děláš ty:"** / **„Udělám já:"**, po krocích člověka čekej na potvrzení. Názvy menu uváděj jako pravděpodobné; když je nevidí, nech ho popsat obrazovku a nevymýšlej.
 
 ## 0. Kde jsme
@@ -58,3 +60,6 @@ Na konec nabídni jednou větou: „Chceš si udělat i vlastní pracovní prost
 - Zapisuj jen do `clen-<slug>/` (a `kb/`, když to pravidla povolují).
 - Needituj `PRAVIDLA.md`, `PRAVIDLA-VERZE.txt` ani `instrukce/` - změny navrhuj vedoucímu.
 - Hesla a přístupové údaje nikdy do chatu ani do souborů.
+
+## Sdílené skilly
+Když hlídač při startu napíše „aktualizuj skilly“, nebo to člen napíše sám, postupuj podle `skilly/README.md` ve sdílené složce (sekce Aktualizuj skilly). Instalaci vždy potvrzuje člověk.
