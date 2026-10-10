@@ -7,6 +7,7 @@ Hook (v návodech „hlídač“) je malý skript, který spouští aplikace sam
 |---|---|---|
 | Start okna | zjistí verzi pravidel, otiskne si ji pro sezení, řekne agentovi, co přečíst | okno může běžet dny; agent musí začít s platnými pravidly |
 | Start okna | porovná verzi sdílených skillů s tím, co je na počítači, a případně vyzve „aktualizuj skilly“ | skilly se instalují do účtu člověka, sám se o změně nedozví |
+| Start okna | porovná složky workspace s `MAPA.md` a vypíše ty, které v mapě chybí (funguje i bez týmu, kdekoli je `MAPA.md` se značkou `COWORK-MAPA`) | agent nemá ukládat do složek, o kterých mapa nic neříká |
 | Před zápisem (soubor, příkaz, zápis do nástroje) | když se mezitím změnila verze pravidel, zápis jednou zastaví a pošle agenta přečíst pravidla | změna pravidel musí platit hned, ne až v novém okně |
 | Kdykoli selže | nic neblokuje, jen ohlásí, že neběží | hlídač nesmí zastavit práci kvůli vlastní chybě |
 | Mimo týmovou složku | mlčí (zapne se jen u složky se značkou `COWORK-TYM`) | nesmí rušit jiné projekty |

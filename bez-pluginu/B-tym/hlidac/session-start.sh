@@ -7,6 +7,7 @@ set +e
 INPUT=$(cat)
 SID=$(json_pole "$INPUT" session_id)
 CWD=$(win2posix "$(json_pole "$INPUT" cwd)")
+bash "$(dirname "$0")/mapa-check.sh" "$CWD"
 VERZE_FILE=$(najdi_verzi "$CWD")
 [ -n "$VERZE_FILE" ] || exit 0
 VERZE=$(cti_verzi "$VERZE_FILE"); [ -n "$VERZE" ] || exit 0

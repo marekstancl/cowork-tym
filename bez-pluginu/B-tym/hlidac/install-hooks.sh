@@ -22,7 +22,7 @@ for c in "node" "python3" "python" "py -3"; do
 done
 [ -n "$RUN" ] || { echo "CHYBA: chybí node i python. Nainstaluj Python z python.org (Windows: zaškrtni 'Add to PATH') a spusť znovu."; exit 1; }
 
-mkdir -p "$DST" && cp "$SRC"/common.sh "$SRC"/session-start.sh "$SRC"/pre-write.sh "$DST/" && chmod +x "$DST"/*.sh || exit 1
+mkdir -p "$DST" && cp "$SRC"/common.sh "$SRC"/session-start.sh "$SRC"/pre-write.sh "$SRC"/mapa-check.sh "$DST/" && chmod +x "$DST"/*.sh || exit 1
 echo "Hooky zkopírovány do $DST"
 if [ -f "$S" ]; then B="$S.zaloha-$(date +%Y%m%d-%H%M%S)"; cp "$S" "$B" && echo "Záloha: $B"; else mkdir -p "$HOME/.claude"; printf '{}\n' > "$S"; fi
 

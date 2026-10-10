@@ -33,6 +33,8 @@ projects/<nazev>/
 ```
 `PROJECT-INSTRUCTIONS.md` obsahuje: co projekt je a co do něj nepatří, kde jsou data, pravidla ukládání a pojmenování (`RRRR-MM-DD_protistrana_typ.pdf`), bezpečnost. U soukromého projektu navíc: *z projektu nic neposílej ven (e-mail, chat, web) bez výslovného pokynu; hesla a čísla účtů nikdy v názvech souborů ani v chatu.*
 
+**Udělám já:** zapiš projekt do `MAPA.md` v kořeni workspace (k čemu, co patří, co ne, citlivost); u projektu s vlastní strukturou dat přidej řádek `<!-- HLOUBKA projects/<nazev>: 2 -->` a jeho podsložky.
+
 **Děláš ty:** v Coworku založ projekt, připoj **celou** pracovní složku a vlož instrukce (ukážu je v bloku kódu). **Ověření:** v novém chatu projektu se zeptej „k čemu je tenhle projekt a kam ukládáš soubory?“ - odpověď musí citovat instrukce.
 
 ## B. Převzetí existujících dat

@@ -13,6 +13,10 @@ Pracovní prostor pro Claude Cowork a další AI agenty. Cesty ber relativně k 
 
 Návody k připojeným nástrojům žijí v `O-MNE/tools/`. Před prací s nástrojem si playbook přečti.
 
+## Mapa složek (`MAPA.md`)
+
+Než něco uložíš nebo založíš složku, najdi místo v `MAPA.md`. Když ho nenajdeš, zeptej se - nevymýšlej novou složku. Když složku založíš, přejmenuješ nebo zrušíš, uprav mapu ve stejném kroku (k čemu, co sem patří, co ne, citlivost). Když hlídač při startu okna hlásí složky chybějící v mapě, řekni to uživateli jednou větou a doplň je, až budeš ukládat.
+
 ## Konvence ukládání (dvoukýblový model)
 
 Root projektu = **jen** `README.md` + `PROJECT-INSTRUCTIONS.md`. Vše ostatní do složek:

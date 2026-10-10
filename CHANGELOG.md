@@ -1,6 +1,7 @@
 # Changelog
 
 ## 0.5.0 - 2026-10-10
+- Mapa složek: `MAPA.md` v kostře workspace, pravidlo v `CLAUDE.md`, hlídač `hooks/mapa-check.sh` při startu okna hlásí složky chybějící v mapě (fail-open, potřebuje perl - na Macu i v Git Bash je).
 - Sdílené skilly v týmu: `skilly/` ve sdílené složce (verze, přehled, postup „aktualizuj skilly“), hlídač při startu upozorní na novou verzi, instalaci potvrzuje člověk; vedoucí se při tvorbě skillu ptá „osobní, nebo pro tým?“.
 - `skills/tym-vedouci/references/hooky-kdy-a-proc.md`: kdy hook ano, kdy ne a zásady psaní.
 - Skill `pruvodce` (rozcestník): co plugin umí, kde začít, jak organizovat projekty, chaty a soubory a jak je pojmenovávat.

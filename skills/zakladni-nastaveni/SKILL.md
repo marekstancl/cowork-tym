@@ -42,6 +42,8 @@ Zjisti: jméno (v 1. pádě), Mac nebo Windows.
 
 Na konci vyhledej mimo `SABLONY/` zbylé značky `{VELKÁ_PÍSMENA}` (např. `{JMÉNO}`, `{SLOZKA}`), `RRRR`, `(cíl)`, `*(volitelné)*` a `[VOLITELNÉ]`. Nic z toho nesmí zůstat. Zápisy jako `<kategorie>` nebo `<krátký popis>` jsou záměrné vzory - nech je.
 
+**Mapa složek:** `MAPA.md` je v kostře. Řekni uživateli jednou větou, k čemu je (agent podle ní ví, kam co patří, a hlídač hlásí nové složky, které v ní chybí). Při zakládání projektů ji doplňuj.
+
 ## 3. Globální instrukce
 
 - **Udělám já:** ukaž obsah `GLOBAL-INSTRUCTIONS.txt` v bloku kódu.
